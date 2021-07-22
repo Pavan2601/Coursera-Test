@@ -1,0 +1,13 @@
+delimiter //
+Create  trigger b_id
+before
+insert
+on player
+for each row
+begin
+if new.runs<0
+then 
+set new.runs=0;
+end if;
+end;
+//
